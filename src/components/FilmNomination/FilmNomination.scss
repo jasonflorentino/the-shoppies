@@ -1,0 +1,96 @@
+@use "../../partials/variables" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/mixins" as *;
+
+.FilmNomination {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: .5rem;
+  
+  @include mobile_large {
+    margin: .75rem;
+  }
+
+  @include tablet {
+    margin: 1rem;
+  }
+
+  @include desktop {
+    margin: 1.5rem;
+    transition: box-shadow .2s;
+
+    &:hover {
+     box-shadow: 0 .25rem 1.5rem -.2rem rgba($color_bw_black, 0.45);
+    }  
+  }
+
+  & .fas {
+    display: none;
+    position: absolute;
+    
+    transform: scale(1.3);
+    background-color: $color_green_primary;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    color: white;
+    top: -0.25rem;
+    right: -0.25rem;
+    transition: transform .2s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.4);
+    }
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+  }
+
+  &__poster {
+    width: 4rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: .25rem;
+
+    @include mobile_large {
+      width: 5rem;
+      height: 7.5rem;
+    }
+
+    @include tablet {
+      width: 6rem;
+      height: 9rem;
+    }
+
+    @include desktop {
+      width: 7rem;
+      height: 10.5rem;
+    }
+  }
+
+  &__removeButton {
+    margin-top: .25rem;
+    padding: .25rem;
+    border: none;
+    background: none;
+    color: $color_bw_white;
+    @include typography_sans_serif;
+    border-radius: .25rem;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $color_green_light;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+}

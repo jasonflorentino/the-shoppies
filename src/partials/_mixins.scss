@@ -1,0 +1,38 @@
+@use './variables' as *;
+
+@mixin mobile_large {
+  @media (min-width: $screen_mobileLarge) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $screen_tablet) {
+    @content;
+  }
+}
+
+@mixin tablet_large {
+  @media (min-width: $screen_tabletLarge) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $screen_desktop) {
+    @content;
+  }
+}
+
+@mixin button {
+  width: 100%;
+  padding: .5rem;
+
+  @include mobile_large {
+    width: fit-content;
+  }
+  
+  @include tablet {
+    width: 100%;
+  }
+}

@@ -1,0 +1,87 @@
+@use "../../partials/variables" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/mixins" as *;
+
+.FilmCard {
+  padding: .5rem;
+  width: 100%;
+  
+  @include tablet {
+    width: 50%;
+    padding: 1rem;
+  }
+
+  @include tablet_large {
+    width: 33.333%;
+  }
+
+  @include desktop {
+    width: 25%;;
+  }
+
+  &__container {
+    padding: .75rem;
+    display: flex;
+    background-color: $color_bw_white;
+    border: 1px solid $color_green_primary;
+    border-radius: .25rem;
+    
+    @include tablet {
+      flex-direction: column;
+      padding: 1rem;
+      border-radius: .5rem;
+      transition: box-shadow .3s;
+
+      &:hover {
+       box-shadow: 0 .25rem 2.5rem -.25rem rgba($color_bw_black, 0.35);
+      }  
+    }
+  }
+
+  &__posterContainer {
+    @include mobile_large {
+      margin-right: .5rem;
+    }
+
+    @include tablet {
+      margin-right: 0;
+    }
+  }
+  
+  &__poster {
+    width: 4rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: .25rem;
+    
+    @include mobile_large {
+      width: 5rem;
+      height: 7.5rem;
+    }
+    
+    @include tablet {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  &__infoContainer {
+    flex: 3 1 0;
+    padding: .5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include mobile_large {
+      padding: .75rem;
+    }
+  }
+
+  &__nominate {
+    @include button;
+  }
+
+  &__remove {
+    @include button;
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../partials/variables" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/mixins" as *;
+
+.Nominations {
+  margin: .5rem;
+  padding: .5rem;
+  border-radius: .25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: $color_green_primary;
+  
+  @include tablet {
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}

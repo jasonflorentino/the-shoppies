@@ -1,0 +1,7 @@
+@mixin typography_sans_serif {
+  font-family: 'Inter', Roboto, Helvetica, Arial, sans-serif;
+}
+
+@mixin typography_mono {
+  font-family: 'Space Mono', monospace;
+}
