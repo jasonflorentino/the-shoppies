@@ -1,6 +1,7 @@
 import './FilmCard.scss';
 
 const FilmCard = ({ film, isNominated, nominateHandler, removeHandler }) => {
+
   return (
     <div className='FilmCard'>
       <div className='FilmCard__container'>
@@ -10,8 +11,8 @@ const FilmCard = ({ film, isNominated, nominateHandler, removeHandler }) => {
         <div className='FilmCard__infoContainer'>
           <h3 className='FilmCard__title'>{film.Title}</h3>
           <span className='FilmCard__year'>{film.Year}</span>
-          {!isNominated && <button className='FilmCard__nominate' onClick={nominateHandler}>Nominate</button>}
-          {isNominated && <button className='FilmCard__remove' onClick={removeHandler}>Remove</button>}
+          {!isNominated && <button className='FilmCard__nominate' onClick={()=>nominateHandler(film)}>Nominate</button>}
+          {isNominated && <button className='FilmCard__remove' onClick={()=>removeHandler(film.imdbID)}>Remove</button>}
         </div>
       </div>
     </div>

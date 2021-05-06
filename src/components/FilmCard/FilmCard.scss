@@ -31,6 +31,7 @@
       padding: 1rem;
       border-radius: .5rem;
       transition: box-shadow .3s;
+      height: 100%;
 
       &:hover {
        box-shadow: 0 .25rem 2.5rem -.25rem rgba($color_bw_black, 0.35);
@@ -71,17 +72,39 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-
+    
     @include mobile_large {
       padding: .75rem;
     }
   }
 
-  &__nominate {
-    @include button;
+  &__title {
+    font-size: $font_size-5;
+    color: $color_green_dark;
+
+    @include tablet {
+      font-size: $font_size-4;
+    }
   }
 
+  &__year {
+    @include typography_mono;
+    font-size: $font_size-5;
+    margin-bottom: .25rem;
+
+    @include tablet {
+      font-size: $font_size-4;
+      color: $color_bw_medium;
+    }
+  }
+
+  &__nominate {
+    @include button-outline;
+    margin-top: auto;
+  }
+  
   &__remove {
-    @include button;
+    @include button-solid;
+    margin-top: auto;
   }
 }

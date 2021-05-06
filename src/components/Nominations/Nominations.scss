@@ -6,14 +6,58 @@
   margin: .5rem;
   padding: .5rem;
   border-radius: .25rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   background-color: $color_green_primary;
   
   @include tablet {
     border-radius: .5rem;
     padding: 1rem;
     margin: 1rem;
+  }
+
+  &__heading {
+    font-size: $font_size-5;
+    color: $color_bw_white;
+
+    @include tablet {
+      font-size: $font_size-4;
+    }
+
+    @include desktop {
+      font-size: $font_size-3;
+    }
+  }
+
+  &__count {
+    margin-left: 1rem;
+    color: $color_green_light;
+    @include typography_mono;
+  }
+
+  &__films {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__none {
+    padding: 2rem;
+    height: 8.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: $color_green_light;
+    display: flex;
+    align-items: center;
+
+    @include mobile_large {
+      height: 10.75rem;
+    }
+
+    @include tablet {
+      height: 11rem;
+    }
+
+    @include desktop {
+      height: 13.5rem;
+    }
   }
 }

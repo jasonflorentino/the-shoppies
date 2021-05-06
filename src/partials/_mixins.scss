@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './typography' as *;
 
 @mixin mobile_large {
   @media (min-width: $screen_mobileLarge) {
@@ -25,14 +26,54 @@
 }
 
 @mixin button {
+  @include typography_sans_serif;
   width: 100%;
-  padding: .5rem;
+  padding: .75rem;
+  border-radius: .25rem;
+  font-weight: 700;
+  transition: all .25s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px $color_green_dark;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @include mobile_large {
+    font-size: .9rem;
     width: fit-content;
   }
   
   @include tablet {
     width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@mixin button-outline {
+  @include button;
+  background: none;
+  color: $color_green_primary;
+  border: 2px solid $color_green_primary;
+
+  &:hover {
+    background: $color_green_primary;
+    color: $color_bw_white;
+    border: 2px solid $color_green_primary;
+  }
+}
+
+@mixin button-solid {
+  @include button;
+  background: $color_green_primary;
+  color: $color_bw_white;
+  border: 2px solid $color_green_primary;
+
+  &:hover {
+    background: $color_green_dark2;
+    border: 2px solid $color_green_primary;
   }
 }

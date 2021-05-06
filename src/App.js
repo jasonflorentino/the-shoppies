@@ -1,34 +1,94 @@
 import React from 'react';
+import axios from 'axios';
 
 import './App.scss';
+import CompletedBanner from './components/CompletedBanner/CompletedBanner';
 import Nominations from './components/Nominations/Nominations';
 import Results from './components/Results/Results';
+import Search from './components/Search/Search';
+
+const NOMINATION_LIMIT = 5;
 
 class App extends React.Component {
   state = {
     loading: false,
     page: 1,
     searchTerms: "",
-    results: fakeFilms(),
-    nominations: fakeFilms(),
-    showNominations: false
+    results: [],
+    nominations: [],
+    showNominations: true,
+    showCompleteModal: false
   }
 
-  setLoading        = bool => this.setState({ loading: bool });
-  setPage           = num => this.setState({ page: num });
-  toggleNominations = () => this.setState({ showNominations: !this.showNominations });
-  addNomination     = film => this.setState({ nominations: [...this.nominations, film] });
-  removeNomination  = filmId => this.setState({
-    nominations: this.nominations.filter(film => film.imdbID !== filmId)
-  })
+  setLoading           = bool => this.setState({ loading: bool });
+  setShowCompleteModal = bool => this.setState({ showCompleteModal: bool });
+  setPage              = num => this.setState({ page: num });
+  toggleNominations    = () => this.setState({ showNominations: !this.state.showNominations });
+  
+  removeNomination = filmId => {
+    this.setState({
+      nominations: this.state.nominations.filter(film => film.imdbID !== filmId)
+    })
+  }
+  
+  addNomination = film => {
+    if (this.state.nominations.length >= NOMINATION_LIMIT) {
+      alert(`You can only make ${NOMINATION_LIMIT} nominations.`);
+      return;
+    }
+
+    this.setState({ 
+      nominations: [...this.state.nominations, film] 
+    });
+  }
+
+  makeSearchRequest = async searchTerms => {
+    this.setLoading(true);
+    const base = process.env.REACT_APP_API_URL;
+    const key = process.env.REACT_APP_API_KEY;
+    const url = `${base}?apikey=${key}&type=movie&page=${this.state.page}&s=${searchTerms}`;
+
+    try {
+      const response = await axios.get(url);
+      console.log(response);
+      
+      if (response.data.Response === "True") {
+        this.setState({
+          results: response.data.Search,
+          loading: false
+        })
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   render() {
     return (
       <div className="App">
+        {this.state.showCompleteModal && <CompletedBanner setVisibility={this.setShowCompleteModal} />}
         <div className="App__container">
+          <header className="App__header">
+            <h1 className="App__logo">🎥 The Shoppies</h1>
+          </header>
           <main className="App__main">
-            <Nominations films={this.state.nominations.slice(0,5)} />
-            <Results films={this.state.results} />
+            <Search searchHandler={this.makeSearchRequest} />
+            {this.state.showNominations && (
+              <Nominations 
+                films={this.state.nominations} 
+                removeNomination={this.removeNomination} 
+                nominationCount={this.state.nominations.length}
+                nominationLimit={NOMINATION_LIMIT}
+              />
+            )}
+            {!this.state.loading && (
+              <Results 
+                films={this.state.results} 
+                addNomination={this.addNomination} 
+                removeNomination={this.removeNomination}
+                nominations={this.state.nominations} 
+              />
+            )}
           </main>
         </div>
       </div>
