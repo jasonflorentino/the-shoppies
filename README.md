@@ -21,6 +21,10 @@ We'd like a simple to use interface that makes it easy to:
 5. If a search result has already been nominated, disable its nominate button.
 6. Display a banner when the user has 5 nominations.
 
-
+## 🖼 Snapshot
 
 ![Screenshot of the Shoppies app](./demo/screenshot.png)
+
+Thanks for visiting!
+
+—Jason (May 2021)
