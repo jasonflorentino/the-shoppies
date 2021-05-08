@@ -1,7 +1,7 @@
 # 🎥 The Shoppies
 ***A Frontend Developer challenge by Jason Florentino***
 
-## 🔗 View Deployed Version
+## [🔗 View Deployed Version](https://theshoppiesjason.netlify.app/)
 Created during the evenings after work over the span of a few days, this is my submission for Shopify's Frontend Intern Challenge. Given the limited timing, I tried to balance the creation of a simple, but pleasing design, with the addition of some extra features to improve the user experience. Those extras include: Responsive layout; State persistance using local storage; Loading, empty, and error states; Pagination for search results.
 
 ## 🎯 The Challenge
