@@ -1,3 +1,2 @@
 # The Shoppies
-***A Web Developer Intern Challenge by Jason Florentino***
-Fall 2021
+***A Frontend Developer challenge by Jason Florentino***

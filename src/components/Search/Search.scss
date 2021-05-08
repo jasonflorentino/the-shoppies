@@ -4,11 +4,12 @@
 
 .Search {
   margin: .5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   
   @include tablet {
     margin: 1rem;
+    margin-bottom: 1rem;
   }
 
   &__input {
@@ -20,6 +21,7 @@
     @include typography_sans_serif;
     font-size: $font_size-5;
     color: $color_green_dark2;
+    transition: box-shadow .3s;
     
     @include tablet {
       border-radius: .5rem;

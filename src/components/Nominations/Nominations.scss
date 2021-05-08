@@ -10,7 +10,7 @@
   
   @include tablet {
     border-radius: .5rem;
-    padding: 1rem;
+    padding: 1rem 1.75rem;
     margin: 1rem;
   }
 
@@ -42,17 +42,19 @@
   &__none {
     padding: 2rem;
     height: 8.75rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: $color_green_light;
     display: flex;
     align-items: center;
-
+    font-weight: 500;
+    font-size: $font_size-5;
+    letter-spacing: 1px;
+    color: $color_green_light;
+    
     @include mobile_large {
       height: 10.75rem;
     }
-
+    
     @include tablet {
+      font-size: $font_size-4;
       height: 11rem;
     }
 
