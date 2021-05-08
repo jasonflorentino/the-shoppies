@@ -11,12 +11,9 @@
     color: $color_green_dark2;
     font-weight: 500;
     font-size: $font_size-5;
-
-
     @include tablet {
       font-size: $font_size-4;
     }
-
     @include desktop {
       font-size: $font_size-4;
     }

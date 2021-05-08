@@ -7,7 +7,6 @@
   padding: .5rem;
   border-radius: .25rem;
   background-color: $color_green_primary;
-  
   @include tablet {
     border-radius: .5rem;
     padding: 1rem 1.75rem;
@@ -17,11 +16,9 @@
   &__heading {
     font-size: $font_size-5;
     color: $color_bw_white;
-
     @include tablet {
       font-size: $font_size-5;
     }
-
     @include desktop {
       font-size: $font_size-4;
     }
@@ -48,16 +45,13 @@
     font-size: $font_size-5;
     letter-spacing: 1px;
     color: $color_green_light;
-    
     @include mobile_large {
       height: 10.75rem;
     }
-    
     @include tablet {
       font-size: $font_size-5;
       height: 11rem;
     }
-
     @include desktop {
       height: 13.5rem;
     }

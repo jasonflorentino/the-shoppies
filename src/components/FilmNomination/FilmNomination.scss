@@ -7,15 +7,12 @@
   flex-direction: column;
   position: relative;
   margin: .5rem;
-  
   @include mobile_large {
     margin: .75rem;
   }
-
   @include tablet {
     margin: 1rem;
   }
-
   @include desktop {
     margin: 1.5rem;
     transition: box-shadow .2s;
@@ -56,17 +53,14 @@
     height: 6rem;
     object-fit: cover;
     border-radius: .25rem;
-
     @include mobile_large {
       width: 5rem;
       height: 7.5rem;
     }
-
     @include tablet {
       width: 6rem;
       height: 9rem;
     }
-
     @include desktop {
       width: 7rem;
       height: 10.5rem;

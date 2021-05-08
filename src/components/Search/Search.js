@@ -26,6 +26,7 @@ const Search = ({ searchHandler, resetPageNum }) => {
     localStorage.setItem("appState", JSON.stringify(clearState));
   }
 
+  // Set flag for first render
   useEffect(() => {
     setDidMount(true);
   }, [])

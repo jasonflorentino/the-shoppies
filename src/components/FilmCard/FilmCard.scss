@@ -5,16 +5,13 @@
 .FilmCard {
   padding: .5rem;
   width: 100%;
-  
   @include tablet {
     width: 50%;
     padding: 1rem;
   }
-
   @include tablet_large {
     width: 33.333%;
   }
-
   @include desktop {
     width: 25%;;
   }
@@ -25,7 +22,6 @@
     background-color: $color_bw_white;
     border: 1px solid $color_green_primary;
     border-radius: .25rem;
-    
     @include tablet {
       flex-direction: column;
       padding: 1rem;
@@ -43,7 +39,6 @@
     @include mobile_large {
       margin-right: .5rem;
     }
-
     @include tablet {
       margin-right: 0;
     }
@@ -54,12 +49,10 @@
     height: 6rem;
     object-fit: cover;
     border-radius: .25rem;
-    
     @include mobile_large {
       width: 5rem;
       height: 7.5rem;
     }
-    
     @include tablet {
       width: 100%;
       height: auto;
@@ -72,7 +65,6 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    
     @include mobile_large {
       padding: .75rem;
     }
@@ -81,7 +73,6 @@
   &__title {
     font-size: $font_size-5;
     color: $color_green_dark;
-
     @include tablet {
       font-size: $font_size-4;
     }
@@ -91,7 +82,6 @@
     @include typography_mono;
     font-size: $font_size-5;
     margin-bottom: .25rem;
-
     @include tablet {
       font-size: $font_size-4;
       color: $color_bw_medium;

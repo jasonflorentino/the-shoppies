@@ -29,7 +29,7 @@ class App extends React.Component {
   setLoading           = bool => this.setState({ loading: bool });
   setShowCompleteModal = bool => this.setState({ showCompleteModal: bool });
   
-  changePage = (num) => {
+  changePage = num => {
     this.setState(
       { page: this.state.page + num }, 
       () => this.makeSearchRequest(this.state.lastSearch)
@@ -45,7 +45,7 @@ class App extends React.Component {
   
   addNomination = film => {
     if (this.state.nominations.length >= config.NOMINATION_LIMIT) {
-      alert(`You can only make ${config.NOMINATION_LIMIT} nominations.`);
+      alert(`You can only make ${config.NOMINATION_LIMIT} nominations. Please remove one before adding another.`);
       return;
     }
 
@@ -87,7 +87,7 @@ class App extends React.Component {
     }
   }
 
-  displayError = (response) => {
+  displayError = response => {
     const errors = ["Too many results.", "Movie not found!"];
     let message;
     

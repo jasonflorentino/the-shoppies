@@ -5,7 +5,6 @@
 
 @mixin container_padding {
   padding: .5rem;
-  
   @include mobile_large {
     padding: 1rem;
   }
@@ -25,7 +24,6 @@
 
   &__header {
     @include container_padding;
-
     @include tablet {
       padding-top: 2rem;
     }
@@ -34,12 +32,10 @@
   &__logo {
     color: $color_green_dark;
     font-size: $font_size-2;
-
     @include tablet {
       margin: 1rem;
       font-size: $font_size-1;
     }
-
     @include desktop {
       font-size: $font_size-0;
     }

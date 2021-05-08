@@ -6,7 +6,6 @@
   margin: .5rem;
   margin-bottom: 0.5rem;
   display: flex;
-  
   @include tablet {
     margin: 1rem;
     margin-bottom: 1rem;
@@ -22,11 +21,9 @@
     font-size: $font_size-5;
     color: $color_green_dark2;
     transition: box-shadow .3s;
-    
     @include tablet {
       border-radius: .5rem;
     }
-    
     @include desktop {
       padding: 1rem 1.5rem;
       font-size: $font_size-4;
@@ -49,16 +46,13 @@
     flex: 1 1 auto;
     max-width: 10rem;
     margin-left: .5rem;
-
     @include mobile_large {
       width: 30%;
     }
-    
     @include tablet {
       margin-left: 1rem;
       border-radius: .5rem;
     }
-
     @include desktop {
       font-size: $font_size-5;
     }
