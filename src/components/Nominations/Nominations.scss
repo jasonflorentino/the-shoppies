@@ -19,11 +19,11 @@
     color: $color_bw_white;
 
     @include tablet {
-      font-size: $font_size-4;
+      font-size: $font_size-5;
     }
 
     @include desktop {
-      font-size: $font_size-3;
+      font-size: $font_size-4;
     }
   }
 
@@ -54,7 +54,7 @@
     }
     
     @include tablet {
-      font-size: $font_size-4;
+      font-size: $font_size-5;
       height: 11rem;
     }
 

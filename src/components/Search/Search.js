@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import { defaultState } from '../../App';
 import config from "../../config";
 import './Search.scss';
 
@@ -17,7 +18,7 @@ const Search = ({ searchHandler, resetPageNum }) => {
   const handleClear = () => {
     setSearchTerms("");
     localStorage.setItem("storedSearch", "");
-    const appState = JSON.parse(localStorage.getItem("appState"));
+    const appState = JSON.parse(localStorage.getItem("appState")) || defaultState;
     const clearState = {...appState, 
                         results: [], 
                         error: true, 

@@ -10,13 +10,7 @@ import Error from './components/Error/Error';
 import config from './config';
 import './App.scss';
 
-// const NOMINATION_LIMIT = 5;
-// const DEFAULT_MESSAGE  = "Try searching for a film ☝️"
-
-class App extends React.Component {
-  prevState = JSON.parse(localStorage.getItem("appState"));
-
-  state = this.prevState || { loading: false,
+export const defaultState = { loading: false,
                               error: true,
                               errorMessage: config.DEFAULT_MESSAGE,
                               page: 1,
@@ -25,6 +19,11 @@ class App extends React.Component {
                               totalResults: "",
                               nominations: [],
                               showCompleteModal: true }
+
+class App extends React.Component {
+  prevState = JSON.parse(localStorage.getItem("appState"));
+
+  state = this.prevState || defaultState;
 
   resetPageNum         =   () => this.setState({ page: 1});
   setLoading           = bool => this.setState({ loading: bool });
@@ -112,7 +111,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("Prevstate:", this.prevState);
     return (
       <div className="App">
         {

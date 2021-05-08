@@ -33,15 +33,15 @@
 
   &__logo {
     color: $color_green_dark;
-    font-size: $font_size-1;
+    font-size: $font_size-2;
 
     @include tablet {
       margin: 1rem;
-      font-size: $font_size-0;
+      font-size: $font_size-1;
     }
 
     @include desktop {
-      font-size: 4.768rem;
+      font-size: $font_size-0;
     }
   }
 

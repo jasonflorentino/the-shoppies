@@ -27,7 +27,7 @@
   }
 
   &__nextDetails {
-    padding: .75rem;
+    padding: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
     
     @include tablet {
       align-items: flex-start;
-      padding: 1rem;
+      padding: 1.75rem;
       height: 100%;
     }
   }
@@ -47,10 +47,6 @@
     
     @include tablet {
       font-size: $font-size-4;
-    }
-
-    @include desktop {
-      font-size: $font-size-3;
     }
   }
 
@@ -66,10 +62,18 @@
 
   &__button {
     @include button-outline;
-
+    
+    @include tablet {
+      font-size: $font-size-7;
+    }
+    
     &--prev {
       @extend .Results__button;
       margin-right: .5rem;
+      
+      @include tablet {
+        font-size: $font-size-7;
+      }
     }
   }
 }
