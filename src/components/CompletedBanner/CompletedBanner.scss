@@ -68,13 +68,11 @@
   }
 
   &__button {
-    &--close {
-      @include button-outline;
-      margin: .5rem;
-      max-width: 17rem;
-      @include desktop {
-        margin: 1rem;
-      }
+    @include button-outline;
+    margin: .5rem;
+    max-width: 17rem;
+    @include desktop {
+      margin: 1rem;
     }
     
     &--visit {

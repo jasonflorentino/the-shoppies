@@ -11,7 +11,7 @@ const CompletedBanner = ({ setVisibility }) => {
   }
 
   const linkedinUrl = 'https://www.linkedin.com/in/jasonflorentino/';
-  const gitHubUrl   = 'https://github.com/jasonflorentino';
+  const gitHubUrl   = 'https://github.com/jasonflorentino/the-shoppies';
 
   return (
     <div className="CompletedBanner" onClick={closeModal}>
@@ -20,10 +20,10 @@ const CompletedBanner = ({ setVisibility }) => {
         onMouseEnter={() => setInContainer(true)}
         onMouseLeave={() => setInContainer(false)}
       >
-        <h2 className="CompletedBanner__heading">🎬 That's a wrap!</h2>
+        <h2 className="CompletedBanner__heading">🎬 That&#8217;s a wrap!</h2>
         <p className="CompletedBanner__body">Thank you for making your nominations. Feel free to continue browsing this page or check out its creator. 🙌</p>
         <div className="CompletedBanner__actions">
-          <button className="CompletedBanner__button--close" onClick={()=>setVisibility(false)}>Continue browsing</button>
+          <button className="CompletedBanner__button" onClick={()=>setVisibility(false)}>Continue browsing</button>
           <a 
             className="CompletedBanner__button--visit"
             href={linkedinUrl} 
@@ -33,12 +33,12 @@ const CompletedBanner = ({ setVisibility }) => {
             Jason on Linkedin
           </a>
           <a 
-            className="CompletedBanner__button--visit"
+            className="CompletedBanner__button"
             href={gitHubUrl} 
             target='_blank' 
             rel='noreferrer'
           >
-            Jason on GitHub
+            GitHub Repo
           </a>
         </div>
       </div>
